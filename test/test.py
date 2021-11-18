@@ -144,7 +144,7 @@ def test(file,testLog):
                 failedTests = list(i for i in range(len(out)) if expected[i] != out[i])
                 print("Tests " + str(failedTests) + " did not match expected results.", file = testLog)
                 for testNum in failedTests:
-                    print("Test "+str(testNum))
+                    print("Test "+str(testNum),file = testLog)
                     print("  Expected: ", expected[testNum], file = testLog)
                     print("    Output: ", out[testNum], file = testLog)
             else:
@@ -178,4 +178,4 @@ with open("FailedTests.txt",'w') as testLog:
 
 print('--End testing-----------------------')
 print(success, 'out of', total, 'tests passed.')
-exit(total-sucess)
+exit(total-success)
