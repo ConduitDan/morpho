@@ -114,9 +114,7 @@ def getoutput(filepath):
 
 # Test a file
 def test(file,testLog):
-    ret = 0;
-    print(file+":", end=" ")
-    
+    ret = 0;    
 
     # Create a temporary file in the same directory
     tmp = file + '.out'
@@ -134,15 +132,11 @@ def test(file,testLog):
 
         # Was it expected?
         if(expected==out):
-            print(file+":", end=" ")
-            print(stylize("Passed",colored.fg("green")))
             ret = 1
         else:
             print("\n")
-            print("::error file = {",file,"}:: Expected: ", expected," \n Output: ", out,"}")
-            
-            
-            #also print to the test log
+            print("::error file = {",file,"}::{",file," Failed}")
+
             print(file+":", end=" ",file = testLog)
             print("Failed", file = testLog)
             
@@ -184,3 +178,4 @@ with open("FailedTests.txt",'w') as testLog:
 
 print('--End testing-----------------------')
 print(success, 'out of', total, 'tests passed.')
+exit(total-sucess)
