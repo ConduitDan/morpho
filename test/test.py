@@ -134,7 +134,6 @@ def test(file,testLog):
         if(expected==out):
             ret = 1
         else:
-            print("\n")
             print("::error file = {",file,"}::{",file," Failed}")
 
             print(file+":", end=" ",file = testLog)
