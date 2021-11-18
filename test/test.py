@@ -138,9 +138,11 @@ def test(file,testLog):
             print(stylize("Passed",colored.fg("green")))
             ret = 1
         else:
+            print("::error::{")
             print(stylize("Failed",colored.fg("red")))
             print("  Expected: ", expected)
             print("    Output: ", out)
+            print("}")
             
             
             #also print to the test log
