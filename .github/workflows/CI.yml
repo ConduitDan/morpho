@@ -22,6 +22,6 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install regex colored
     - name: make 
-      run: sudo make -f Makefile.linux install
+      run: (cd morpho5; sudo make -f Makefile.linux install)
     - name: test
       run: (cd test; python3 test.py)
